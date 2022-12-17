@@ -1,3 +1,3 @@
 export type OrderWhereUniqueInput = {
-  id: string;
+  id: number;
 };

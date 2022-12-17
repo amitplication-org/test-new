@@ -16,7 +16,6 @@ import {
   ValidateNested,
   IsOptional,
   IsNumber,
-  IsString,
   IsInt,
 } from "class-validator";
 import { Type } from "class-transformer";
@@ -54,11 +53,11 @@ class Order {
 
   @ApiProperty({
     required: true,
-    type: String,
+    type: Number,
   })
-  @IsString()
-  @Field(() => String)
-  id!: string;
+  @IsInt()
+  @Field(() => Number)
+  id!: number;
 
   @ApiProperty({
     required: false,
