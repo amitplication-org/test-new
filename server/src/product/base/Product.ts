@@ -15,6 +15,7 @@ import {
   IsDate,
   IsString,
   IsOptional,
+  IsInt,
   IsNumber,
   ValidateNested,
 } from "class-validator";
@@ -43,11 +44,11 @@ class Product {
 
   @ApiProperty({
     required: true,
-    type: String,
+    type: Number,
   })
-  @IsString()
-  @Field(() => String)
-  id!: string;
+  @IsInt()
+  @Field(() => Number)
+  id!: number;
 
   @ApiProperty({
     required: false,

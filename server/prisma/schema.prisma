@@ -10,7 +10,7 @@ generator client {
 model User {
   createdAt DateTime @default(now())
   firstName String?
-  id        String   @id @default(cuid())
+  id        Int      @id @default(autoincrement())
   lastName  String?
   password  String
   roles     Json
@@ -25,7 +25,7 @@ model Order {
   discount   Float?
   id         String    @id @default(cuid())
   product    Product?  @relation(fields: [productId], references: [id])
-  productId  String?
+  productId  Int?
   quantity   Int?
   totalPrice Int?
   updatedAt  DateTime  @updatedAt
@@ -62,7 +62,7 @@ model Address {
 model Product {
   createdAt   DateTime @default(now())
   description String?
-  id          String   @id @default(cuid())
+  id          Int      @id @default(autoincrement())
   itemPrice   Float?
   name        String?
   orders      Order[]

@@ -21,7 +21,7 @@ const existingId = "existingId";
 const CREATE_INPUT = {
   createdAt: new Date(),
   firstName: "exampleFirstName",
-  id: "exampleId",
+  id: 42,
   lastName: "exampleLastName",
   password: "examplePassword",
   updatedAt: new Date(),
@@ -30,7 +30,7 @@ const CREATE_INPUT = {
 const CREATE_RESULT = {
   createdAt: new Date(),
   firstName: "exampleFirstName",
-  id: "exampleId",
+  id: 42,
   lastName: "exampleLastName",
   password: "examplePassword",
   updatedAt: new Date(),
@@ -40,7 +40,7 @@ const FIND_MANY_RESULT = [
   {
     createdAt: new Date(),
     firstName: "exampleFirstName",
-    id: "exampleId",
+    id: 42,
     lastName: "exampleLastName",
     password: "examplePassword",
     updatedAt: new Date(),
@@ -50,7 +50,7 @@ const FIND_MANY_RESULT = [
 const FIND_ONE_RESULT = {
   createdAt: new Date(),
   firstName: "exampleFirstName",
-  id: "exampleId",
+  id: 42,
   lastName: "exampleLastName",
   password: "examplePassword",
   updatedAt: new Date(),
