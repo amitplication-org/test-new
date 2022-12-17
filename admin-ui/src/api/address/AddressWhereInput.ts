@@ -1,6 +1,6 @@
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { CustomerListRelationFilter } from "../customer/CustomerListRelationFilter";
-import { StringFilter } from "../../util/StringFilter";
+import { IntFilter } from "../../util/IntFilter";
 import { IntNullableFilter } from "../../util/IntNullableFilter";
 
 export type AddressWhereInput = {
@@ -9,7 +9,7 @@ export type AddressWhereInput = {
   anumber?: StringNullableFilter;
   city?: StringNullableFilter;
   customers?: CustomerListRelationFilter;
-  id?: StringFilter;
+  id?: IntFilter;
   state?: StringNullableFilter;
   zip?: IntNullableFilter;
 };
