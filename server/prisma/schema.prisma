@@ -23,7 +23,7 @@ model Order {
   customer   Customer? @relation(fields: [customerId], references: [id])
   customerId String?
   discount   Float?
-  id         String    @id @default(cuid())
+  id         Int       @id @default(autoincrement())
   product    Product?  @relation(fields: [productId], references: [id])
   productId  Int?
   quantity   Int?
