@@ -19,6 +19,7 @@ import { ProductService } from "../product.service";
 const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
+  anotherTest: "exampleAnotherTest",
   createdAt: new Date(),
   description: "exampleDescription",
   id: 42,
@@ -27,6 +28,7 @@ const CREATE_INPUT = {
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
+  anotherTest: "exampleAnotherTest",
   createdAt: new Date(),
   description: "exampleDescription",
   id: 42,
@@ -36,6 +38,7 @@ const CREATE_RESULT = {
 };
 const FIND_MANY_RESULT = [
   {
+    anotherTest: "exampleAnotherTest",
     createdAt: new Date(),
     description: "exampleDescription",
     id: 42,
@@ -45,6 +48,7 @@ const FIND_MANY_RESULT = [
   },
 ];
 const FIND_ONE_RESULT = {
+  anotherTest: "exampleAnotherTest",
   createdAt: new Date(),
   description: "exampleDescription",
   id: 42,

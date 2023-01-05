@@ -1,6 +1,7 @@
 import { Order } from "../order/Order";
 
 export type Product = {
+  anotherTest: string | null;
   createdAt: Date;
   description: string | null;
   id: number;

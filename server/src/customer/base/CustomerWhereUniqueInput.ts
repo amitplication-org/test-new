@@ -12,6 +12,7 @@ https://docs.amplication.com/how-to/custom-code
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { IsInt } from "class-validator";
+
 @InputType()
 class CustomerWhereUniqueInput {
   @ApiProperty({
@@ -22,4 +23,5 @@ class CustomerWhereUniqueInput {
   @Field(() => Number)
   id!: number;
 }
+
 export { CustomerWhereUniqueInput };

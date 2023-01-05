@@ -17,8 +17,20 @@ import { IsOptional, ValidateNested } from "class-validator";
 import { IntFilter } from "../../util/IntFilter";
 import { FloatNullableFilter } from "../../util/FloatNullableFilter";
 import { OrderListRelationFilter } from "../../order/base/OrderListRelationFilter";
+
 @InputType()
 class ProductWhereInput {
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  anotherTest?: StringNullableFilter;
+
   @ApiProperty({
     required: false,
     type: StringNullableFilter,
@@ -75,4 +87,5 @@ class ProductWhereInput {
   })
   orders?: OrderListRelationFilter;
 }
+
 export { ProductWhereInput };

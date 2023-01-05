@@ -9,7 +9,7 @@ https://docs.amplication.com/how-to/custom-code
 
 ------------------------------------------------------------------------------
   */
-import { PrismaService } from "nestjs-prisma";
+import { PrismaService } from "../../prisma/prisma.service";
 import { Prisma, Address, Customer } from "@prisma/client";
 
 export class AddressServiceBase {
@@ -48,7 +48,7 @@ export class AddressServiceBase {
   }
 
   async findCustomers(
-    parentId: string,
+    parentId: number,
     args: Prisma.CustomerFindManyArgs
   ): Promise<Customer[]> {
     return this.prisma.address

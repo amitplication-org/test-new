@@ -51,6 +51,7 @@ export class ProductControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        anotherTest: true,
         createdAt: true,
         description: true,
         id: true,
@@ -76,6 +77,7 @@ export class ProductControllerBase {
     return this.service.findMany({
       ...args,
       select: {
+        anotherTest: true,
         createdAt: true,
         description: true,
         id: true,
@@ -102,6 +104,7 @@ export class ProductControllerBase {
     const result = await this.service.findOne({
       where: params,
       select: {
+        anotherTest: true,
         createdAt: true,
         description: true,
         id: true,
@@ -137,6 +140,7 @@ export class ProductControllerBase {
         where: params,
         data: data,
         select: {
+          anotherTest: true,
           createdAt: true,
           description: true,
           id: true,
@@ -171,6 +175,7 @@ export class ProductControllerBase {
       return await this.service.delete({
         where: params,
         select: {
+          anotherTest: true,
           createdAt: true,
           description: true,
           id: true,

@@ -9,7 +9,7 @@ https://docs.amplication.com/how-to/custom-code
 
 ------------------------------------------------------------------------------
   */
-import { PrismaService } from "nestjs-prisma";
+import { PrismaService } from "../../prisma/prisma.service";
 import { Prisma, Product, Order } from "@prisma/client";
 
 export class ProductServiceBase {
@@ -48,7 +48,7 @@ export class ProductServiceBase {
   }
 
   async findOrders(
-    parentId: string,
+    parentId: number,
     args: Prisma.OrderFindManyArgs
   ): Promise<Order[]> {
     return this.prisma.product
