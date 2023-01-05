@@ -60,6 +60,7 @@ model Address {
 }
 
 model Product {
+  anotherTest String?
   createdAt   DateTime @default(now())
   description String?
   id          Int      @id @default(autoincrement())
