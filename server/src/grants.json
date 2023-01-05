@@ -1,8 +1,20 @@
 [
   {
+    "role": "admin",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
     "role": "user",
     "resource": "User",
     "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "User",
+    "action": "create:any",
     "attributes": "*"
   },
   {
@@ -12,7 +24,7 @@
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "admin",
     "resource": "User",
     "action": "update:any",
     "attributes": "*"
@@ -20,7 +32,25 @@
   {
     "role": "user",
     "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "User",
     "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "User",
+    "action": "read:any",
     "attributes": "*"
   },
   {
@@ -30,7 +60,7 @@
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "admin",
     "resource": "Order",
     "action": "read:own",
     "attributes": "*"
@@ -38,11 +68,17 @@
   {
     "role": "user",
     "resource": "Order",
+    "action": "read:own",
+    "attributes": "*,!discount"
+  },
+  {
+    "role": "admin",
+    "resource": "Order",
     "action": "create:any",
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "admin",
     "resource": "Order",
     "action": "update:any",
     "attributes": "*"
@@ -50,7 +86,19 @@
   {
     "role": "user",
     "resource": "Order",
+    "action": "update:any",
+    "attributes": "*,!discount,!totalPrice"
+  },
+  {
+    "role": "admin",
+    "resource": "Order",
     "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Order",
+    "action": "read:any",
     "attributes": "*"
   },
   {
@@ -60,9 +108,21 @@
     "attributes": "*"
   },
   {
+    "role": "admin",
+    "resource": "Customer",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
     "role": "user",
     "resource": "Customer",
     "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Customer",
+    "action": "create:any",
     "attributes": "*"
   },
   {
@@ -72,7 +132,7 @@
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "admin",
     "resource": "Customer",
     "action": "update:any",
     "attributes": "*"
@@ -80,7 +140,25 @@
   {
     "role": "user",
     "resource": "Customer",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Customer",
     "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Customer",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Customer",
+    "action": "read:any",
     "attributes": "*"
   },
   {
@@ -90,9 +168,21 @@
     "attributes": "*"
   },
   {
+    "role": "admin",
+    "resource": "Address",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
     "role": "user",
     "resource": "Address",
     "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Address",
+    "action": "create:any",
     "attributes": "*"
   },
   {
@@ -102,7 +192,7 @@
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "admin",
     "resource": "Address",
     "action": "update:any",
     "attributes": "*"
@@ -110,7 +200,25 @@
   {
     "role": "user",
     "resource": "Address",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Address",
     "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Address",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Address",
+    "action": "read:any",
     "attributes": "*"
   },
   {
@@ -120,9 +228,21 @@
     "attributes": "*"
   },
   {
+    "role": "admin",
+    "resource": "Product",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
     "role": "user",
     "resource": "Product",
     "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Product",
+    "action": "create:any",
     "attributes": "*"
   },
   {
@@ -132,7 +252,7 @@
     "attributes": "*"
   },
   {
-    "role": "user",
+    "role": "admin",
     "resource": "Product",
     "action": "update:any",
     "attributes": "*"
@@ -140,7 +260,25 @@
   {
     "role": "user",
     "resource": "Product",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Product",
     "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Product",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Product",
+    "action": "read:any",
     "attributes": "*"
   },
   {

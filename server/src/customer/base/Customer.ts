@@ -21,6 +21,7 @@ import {
 } from "class-validator";
 import { Type } from "class-transformer";
 import { Order } from "../../order/base/Order";
+
 @ObjectType()
 class Customer {
   @ApiProperty({
@@ -131,4 +132,5 @@ class Customer {
   @Field(() => Date)
   updatedAt!: Date;
 }
+
 export { Customer };
