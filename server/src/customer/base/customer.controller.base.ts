@@ -57,6 +57,12 @@ export class CustomerControllerBase {
               connect: data.address,
             }
           : undefined,
+
+        customerType: data.customerType
+          ? {
+              connect: data.customerType,
+            }
+          : undefined,
       },
       select: {
         address: {
@@ -67,6 +73,13 @@ export class CustomerControllerBase {
 
         cnumber: true,
         createdAt: true,
+
+        customerType: {
+          select: {
+            id: true,
+          },
+        },
+
         email: true,
         firstName: true,
         id: true,
@@ -101,6 +114,13 @@ export class CustomerControllerBase {
 
         cnumber: true,
         createdAt: true,
+
+        customerType: {
+          select: {
+            id: true,
+          },
+        },
+
         email: true,
         firstName: true,
         id: true,
@@ -136,6 +156,13 @@ export class CustomerControllerBase {
 
         cnumber: true,
         createdAt: true,
+
+        customerType: {
+          select: {
+            id: true,
+          },
+        },
+
         email: true,
         firstName: true,
         id: true,
@@ -178,6 +205,12 @@ export class CustomerControllerBase {
                 connect: data.address,
               }
             : undefined,
+
+          customerType: data.customerType
+            ? {
+                connect: data.customerType,
+              }
+            : undefined,
         },
         select: {
           address: {
@@ -188,6 +221,13 @@ export class CustomerControllerBase {
 
           cnumber: true,
           createdAt: true,
+
+          customerType: {
+            select: {
+              id: true,
+            },
+          },
+
           email: true,
           firstName: true,
           id: true,
@@ -231,6 +271,13 @@ export class CustomerControllerBase {
 
           cnumber: true,
           createdAt: true,
+
+          customerType: {
+            select: {
+              id: true,
+            },
+          },
+
           email: true,
           firstName: true,
           id: true,

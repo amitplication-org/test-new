@@ -1,10 +1,12 @@
 import { Address } from "../address/Address";
+import { CustomerType } from "../customerType/CustomerType";
 import { Order } from "../order/Order";
 
 export type Customer = {
   address?: Address | null;
   cnumber: string | null;
   createdAt: Date;
+  customerType?: CustomerType | null;
   email: string | null;
   firstName: string | null;
   id: number;

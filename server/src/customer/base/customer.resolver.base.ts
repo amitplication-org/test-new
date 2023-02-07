@@ -28,6 +28,7 @@ import { Customer } from "./Customer";
 import { OrderFindManyArgs } from "../../order/base/OrderFindManyArgs";
 import { Order } from "../../order/base/Order";
 import { Address } from "../../address/base/Address";
+import { CustomerType } from "../../customerType/base/CustomerType";
 import { CustomerService } from "../customer.service";
 
 @graphql.Resolver(() => Customer)
@@ -107,6 +108,12 @@ export class CustomerResolverBase {
               connect: args.data.address,
             }
           : undefined,
+
+        customerType: args.data.customerType
+          ? {
+              connect: args.data.customerType,
+            }
+          : undefined,
       },
     });
   }
@@ -130,6 +137,12 @@ export class CustomerResolverBase {
           address: args.data.address
             ? {
                 connect: args.data.address,
+              }
+            : undefined,
+
+          customerType: args.data.customerType
+            ? {
+                connect: args.data.customerType,
               }
             : undefined,
         },
@@ -194,6 +207,24 @@ export class CustomerResolverBase {
   })
   async address(@graphql.Parent() parent: Customer): Promise<Address | null> {
     const result = await this.service.getAddress(parent.id);
+
+    if (!result) {
+      return null;
+    }
+    return result;
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @graphql.ResolveField(() => CustomerType, { nullable: true })
+  @nestAccessControl.UseRoles({
+    resource: "CustomerType",
+    action: "read",
+    possession: "any",
+  })
+  async customerType(
+    @graphql.Parent() parent: Customer
+  ): Promise<CustomerType | null> {
+    const result = await this.service.getCustomerType(parent.id);
 
     if (!result) {
       return null;

@@ -4,6 +4,7 @@ export type CustomerOrderByInput = {
   addressId?: SortOrder;
   cnumber?: SortOrder;
   createdAt?: SortOrder;
+  customerTypeId?: SortOrder;
   email?: SortOrder;
   firstName?: SortOrder;
   id?: SortOrder;

@@ -20,6 +20,7 @@ import {
   IsInt,
 } from "class-validator";
 import { Type } from "class-transformer";
+import { CustomerType } from "../../customerType/base/CustomerType";
 import { Order } from "../../order/base/Order";
 
 @ObjectType()
@@ -51,6 +52,15 @@ class Customer {
   @Type(() => Date)
   @Field(() => Date)
   createdAt!: Date;
+
+  @ApiProperty({
+    required: false,
+    type: () => CustomerType,
+  })
+  @ValidateNested()
+  @Type(() => CustomerType)
+  @IsOptional()
+  customerType?: CustomerType | null;
 
   @ApiProperty({
     required: false,

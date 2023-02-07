@@ -15,6 +15,7 @@ import { AddressWhereUniqueInput } from "../../address/base/AddressWhereUniqueIn
 import { ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { CustomerTypeWhereUniqueInput } from "../../customerType/base/CustomerTypeWhereUniqueInput";
 import { IntFilter } from "../../util/IntFilter";
 import { OrderListRelationFilter } from "../../order/base/OrderListRelationFilter";
 
@@ -42,6 +43,18 @@ class CustomerWhereInput {
     nullable: true,
   })
   cnumber?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => CustomerTypeWhereUniqueInput,
+  })
+  @ValidateNested()
+  @Type(() => CustomerTypeWhereUniqueInput)
+  @IsOptional()
+  @Field(() => CustomerTypeWhereUniqueInput, {
+    nullable: true,
+  })
+  customerType?: CustomerTypeWhereUniqueInput;
 
   @ApiProperty({
     required: false,

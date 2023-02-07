@@ -32,18 +32,19 @@ model Order {
 }
 
 model Customer {
-  address   Address? @relation(fields: [addressId], references: [id])
-  addressId Int?
-  cnumber   String?  @unique
-  createdAt DateTime @default(now())
-  email     String?
-  firstName String?
-  id        Int      @id @default(autoincrement())
-  lastName  String?
-  onumber   String?  @unique
-  orders    Order[]
-  phone     String?
-  updatedAt DateTime @updatedAt
+  address      Address?      @relation(fields: [addressId], references: [id])
+  addressId    Int?
+  cnumber      String?       @unique
+  createdAt    DateTime      @default(now())
+  customerType CustomerType?
+  email        String?
+  firstName    String?
+  id           Int           @id @default(autoincrement())
+  lastName     String?
+  onumber      String?       @unique
+  orders       Order[]
+  phone        String?
+  updatedAt    DateTime      @updatedAt
 }
 
 model Address {
@@ -68,4 +69,13 @@ model Product {
   name        String?
   orders      Order[]
   updatedAt   DateTime @updatedAt
+}
+
+model CustomerType {
+  createdAt   DateTime  @default(now())
+  customers   Customer? @relation(fields: [customersId], references: [id])
+  customersId Int?      @unique
+  id          String    @id @default(cuid())
+  name        String?
+  updatedAt   DateTime  @updatedAt
 }

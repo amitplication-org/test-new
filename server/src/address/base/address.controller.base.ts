@@ -228,6 +228,13 @@ export class AddressControllerBase {
 
         cnumber: true,
         createdAt: true,
+
+        customerType: {
+          select: {
+            id: true,
+          },
+        },
+
         email: true,
         firstName: true,
         id: true,
